@@ -5,11 +5,11 @@
 class Gptscript < Formula
   desc "GPTScript CLI"
   homepage "https://github.com/gptscript-ai/gptscript"
-  version "0.8.0-rc1"
+  version "0.8.0-rc2"
 
   on_macos do
-    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc1/gptscript-v0.8.0-rc1-macOS-universal.tar.gz"
-    sha256 "6a53eb9504b514c68a88ec3f348f2a14523921f05e372af7739d9dd6f777ab7e"
+    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc2/gptscript-v0.8.0-rc2-macOS-universal.tar.gz"
+    sha256 "727e1a5a2c6679995a21fd7fcd55120ea50a0513443231109e6929592c1f0289"
 
     def install
       bin.install "gptscript"
@@ -19,8 +19,8 @@ class Gptscript < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc1/gptscript-v0.8.0-rc1-linux-arm64.tar.gz"
-      sha256 "1572e22626da71cab41434368a59b1e289942cebe1f629fb362bb768354783ce"
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc2/gptscript-v0.8.0-rc2-linux-arm64.tar.gz"
+      sha256 "ff9330c97fc35cf4eeb9fcc6983ae3d4452621ee43d41e24a735ae7be9a6b5ec"
 
       def install
         bin.install "gptscript"
@@ -28,8 +28,8 @@ class Gptscript < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc1/gptscript-v0.8.0-rc1-linux-amd64.tar.gz"
-      sha256 "3080203fa08ffd9e18eef60d0c38ef950d091b3adbf9d8a628ced3678fd951f6"
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.8.0-rc2/gptscript-v0.8.0-rc2-linux-amd64.tar.gz"
+      sha256 "1a065d8c253b4c8841a8364e45bc5c993b5eb994917681896e7dfcd5bdc3aedd"
 
       def install
         bin.install "gptscript"
