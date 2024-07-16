@@ -5,20 +5,20 @@
 class Clio < Formula
   desc "Clio CLI"
   homepage "https://github.com/gptscript-ai/clio"
-  version "0.0.1-alpha2"
+  version "0.0.1-alpha3"
 
   on_macos do
     on_intel do
-      url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha2/clio_0.0.1-alpha2_darwin_amd64.tar.gz"
-      sha256 "e3b6904ed686facd41d55aed794ea644e689b9a02e5a62f5d61cbef4a14dbe73"
+      url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha3/clio_0.0.1-alpha3_darwin_amd64.tar.gz"
+      sha256 "e362429f4261f680784e585ff6171d9fb778801e3da60ee28e6d9bd0bdd76e8f"
 
       def install
         bin.install "clio"
       end
     end
     on_arm do
-      url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha2/clio_0.0.1-alpha2_darwin_arm64.tar.gz"
-      sha256 "e7e49125bf82b1c0bce62f5e377d601974ab91e272cfb9c285c79cc7b1c53984"
+      url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha3/clio_0.0.1-alpha3_darwin_arm64.tar.gz"
+      sha256 "76fd5a90e19e6bdc1aad34b09ef4f285bcc04a5c7b08ceb3de44f39a44be0c9c"
 
       def install
         bin.install "clio"
@@ -29,8 +29,8 @@ class Clio < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha2/clio_0.0.1-alpha2_linux_amd64.tar.gz"
-        sha256 "6f174e543f88cfbbed931afeb996d753ee0dacc1ab5e0dc87befcac0d082f96b"
+        url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha3/clio_0.0.1-alpha3_linux_amd64.tar.gz"
+        sha256 "e11aefe049cabd0c683c3f08ed7c4177b119971cd39245e9ab3dc33fd1167510"
 
         def install
           bin.install "clio"
@@ -39,8 +39,8 @@ class Clio < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha2/clio_0.0.1-alpha2_linux_arm64.tar.gz"
-        sha256 "b299c63477992511270ce9363b14a7621d6ea6e6823b04e7d07ee41ecce91cda"
+        url "https://github.com/gptscript-ai/clio/releases/download/v0.0.1-alpha3/clio_0.0.1-alpha3_linux_arm64.tar.gz"
+        sha256 "063ad34e9496c7d97cbd363313e11a67d43d9918478e8b45a17473350a3cff7d"
 
         def install
           bin.install "clio"
