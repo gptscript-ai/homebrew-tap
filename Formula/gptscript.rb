@@ -5,35 +5,39 @@
 class Gptscript < Formula
   desc "GPTScript CLI"
   homepage "https://github.com/gptscript-ai/gptscript"
-  version "0.9.2"
+  version "0.9.3"
 
   on_macos do
-    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.2/gptscript-v0.9.2-macOS-universal.tar.gz"
-    sha256 "22141562cbec51a8c0ca986231b7163e80be8c46b63f851a47b5583957fd514b"
+    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.3/gptscript-v0.9.3-macOS-universal.tar.gz"
+    sha256 "c4659856b63414112e84f2d50efec5dfbe7a776217c15f41f55e6ac80c23094d"
 
     def install
       bin.install "gptscript"
-      generate_completions_from_executable(bin/"gptscript", "completion", shells: [:bash, :zsh, :fish])
+      generate_completions_from_executable(bin/"gptscript", "completion")
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.2/gptscript-v0.9.2-linux-arm64.tar.gz"
-      sha256 "da27ee7ae119ba1d7d1623fd61df2fdd73ae8416fd71060293390f1f45281131"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.3/gptscript-v0.9.3-linux-amd64.tar.gz"
+        sha256 "195c467724fd6405970e980af8cf61bf756defba657f5aa2c8cdfd01d4a02d94"
 
-      def install
-        bin.install "gptscript"
-        generate_completions_from_executable(bin/"gptscript", "completion", shells: [:bash, :zsh, :fish])
+        def install
+          bin.install "gptscript"
+          generate_completions_from_executable(bin/"gptscript", "completion")
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.2/gptscript-v0.9.2-linux-amd64.tar.gz"
-      sha256 "e22e808b623d66e258236b6fca15d0522571369239764d9c817bef26f626765f"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.3/gptscript-v0.9.3-linux-arm64.tar.gz"
+        sha256 "39a4a32051f52f806b7b12abf9ec218e9303cdbb8b682ed23a7bc521fa039eed"
 
-      def install
-        bin.install "gptscript"
-        generate_completions_from_executable(bin/"gptscript", "completion", shells: [:bash, :zsh, :fish])
+        def install
+          bin.install "gptscript"
+          generate_completions_from_executable(bin/"gptscript", "completion")
+        end
       end
     end
   end
