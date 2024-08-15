@@ -5,20 +5,20 @@
 class Clio < Formula
   desc "Clio CLI"
   homepage "https://github.com/gptscript-ai/clio"
-  version "0.1.6"
+  version "0.2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/gptscript-ai/clio/releases/download/v0.1.6/clio_v0.1.6_darwin_amd64.tar.gz"
-      sha256 "d002962fc69e85cec21811fe7dd1950f0387f1d2b15cb5b36cfef817abe55368"
+      url "https://github.com/gptscript-ai/clio/releases/download/v0.2.0/clio_v0.2.0_darwin_amd64.tar.gz"
+      sha256 "95b784e71a3c7f1f695d3d44e22f688ed7189c42c006967ba5b0c742953e22c7"
 
       def install
         bin.install "clio"
       end
     end
     on_arm do
-      url "https://github.com/gptscript-ai/clio/releases/download/v0.1.6/clio_v0.1.6_darwin_arm64.tar.gz"
-      sha256 "c8050393dbf64149c42d251ead87c416de693594904a65d66b96e8aad6a3a43c"
+      url "https://github.com/gptscript-ai/clio/releases/download/v0.2.0/clio_v0.2.0_darwin_arm64.tar.gz"
+      sha256 "83df16303f5171b5f197b7bdfe9c2e1c4ea05c1101b18b7b3cc2c7beef173dd3"
 
       def install
         bin.install "clio"
@@ -29,8 +29,8 @@ class Clio < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/clio/releases/download/v0.1.6/clio_v0.1.6_linux_amd64.tar.gz"
-        sha256 "18a62cb663504c9879c41d1059835887cd8c58bf1c32149e11972f0a64841105"
+        url "https://github.com/gptscript-ai/clio/releases/download/v0.2.0/clio_v0.2.0_linux_amd64.tar.gz"
+        sha256 "79067526f9e5c311222bce5c45cd4186ff1ff7d42bd9dea4dbab4bfdc1c11155"
 
         def install
           bin.install "clio"
@@ -39,8 +39,8 @@ class Clio < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/clio/releases/download/v0.1.6/clio_v0.1.6_linux_arm64.tar.gz"
-        sha256 "618ccaaf8c66b12b2c7e751091408b5ec13ada824d9ff9f78cd26acbfd92a54a"
+        url "https://github.com/gptscript-ai/clio/releases/download/v0.2.0/clio_v0.2.0_linux_arm64.tar.gz"
+        sha256 "786de19e0c9135fa5a9bf29768ea2bfb8546ba562792e9e391883fef594996f7"
 
         def install
           bin.install "clio"
