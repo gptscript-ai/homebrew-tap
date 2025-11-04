@@ -5,11 +5,11 @@
 class Gptscript < Formula
   desc "GPTScript CLI"
   homepage "https://github.com/gptscript-ai/gptscript"
-  version "0.9.5"
+  version "0.9.6"
 
   on_macos do
-    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.5/gptscript-v0.9.5-macOS-universal.tar.gz"
-    sha256 "aa074a05d704af83ffd5d7899d6958f486b2cbd24185a7061980864d36a398cf"
+    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.6/gptscript-v0.9.6-macOS-universal.tar.gz"
+    sha256 "022367e8b4e0bf99b504edf1590555aca87502ddae4230d38fcb29c55c60af9c"
 
     def install
       bin.install "gptscript"
@@ -18,26 +18,20 @@ class Gptscript < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.5/gptscript-v0.9.5-linux-amd64.tar.gz"
-        sha256 "5839414b5877bf85b3aeb0fbcacd6d0a4f43e59eb9533a2bb92b404dfcc5c6d4"
-
-        def install
-          bin.install "gptscript"
-          generate_completions_from_executable(bin/"gptscript", "completion")
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.6/gptscript-v0.9.6-linux-amd64.tar.gz"
+      sha256 "9cf08747c0a20a037cd418ed583fbb0b8941031d3e09d3c65f4a729c889b78b1"
+      def install
+        bin.install "gptscript"
+        generate_completions_from_executable(bin/"gptscript", "completion")
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.5/gptscript-v0.9.5-linux-arm64.tar.gz"
-        sha256 "a1820bda0b7c89a7b052d49b186e020ef586b8a0c580e1e95874302da47a92c7"
-
-        def install
-          bin.install "gptscript"
-          generate_completions_from_executable(bin/"gptscript", "completion")
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.6/gptscript-v0.9.6-linux-arm64.tar.gz"
+      sha256 "ad19f9748a1af7b69da6c577c9040f9ca8f0f1c57b14467a64a04b0b3bca99a7"
+      def install
+        bin.install "gptscript"
+        generate_completions_from_executable(bin/"gptscript", "completion")
       end
     end
   end
