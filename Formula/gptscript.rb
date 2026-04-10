@@ -5,13 +5,13 @@
 class Gptscript < Formula
   desc "GPTScript CLI"
   homepage "https://github.com/gptscript-ai/gptscript"
-  version "0.9.8"
+  version "0.9.9"
 
   on_macos do
-    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.8/gptscript-v0.9.8-macOS-universal.tar.gz"
-    sha256 "9b097a559413cf85852179fb03f8838790adb3f6cf6ea9234ead84c370927eb9"
+    url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.9/gptscript-v0.9.9-macOS-universal.tar.gz"
+    sha256 "c3c26b60dfc2fe9ee57ba60c5f67c94bbf16ef24b842a4f984d0ec536d0cff0a"
 
-    def install
+    define_method(:install) do
       bin.install "gptscript"
       generate_completions_from_executable(bin/"gptscript", "completion")
     end
@@ -19,17 +19,17 @@ class Gptscript < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.8/gptscript-v0.9.8-linux-amd64.tar.gz"
-      sha256 "7089a7db281037990058f6489c573c933f788ebd6cc33d04e5566326007b117e"
-      def install
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.9/gptscript-v0.9.9-linux-amd64.tar.gz"
+      sha256 "efb0664ed3f14a6a4c87d8cdcf1f14172db080b9cfd16ce6d578a95c01565363"
+      define_method(:install) do
         bin.install "gptscript"
         generate_completions_from_executable(bin/"gptscript", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.8/gptscript-v0.9.8-linux-arm64.tar.gz"
-      sha256 "9478b875b916c9ef94a9e031bd01a5322be06eb1fedbeb6a541a0aaa330c1c1c"
-      def install
+      url "https://github.com/gptscript-ai/gptscript/releases/download/v0.9.9/gptscript-v0.9.9-linux-arm64.tar.gz"
+      sha256 "70a072b0ac943baa8c0cd6d07c30e05a03a198680de3c12a1f5bbaec388824d4"
+      define_method(:install) do
         bin.install "gptscript"
         generate_completions_from_executable(bin/"gptscript", "completion")
       end
